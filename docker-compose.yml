@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3004:3004"
+    environment:
+      - MONGO_URL=mongodb://127.0.0.1:27017/vehicle-service
+      - JWT_SECRET=qwertyuiopxdfghjklmnbvcdsaweryu
+      - NODE_ENV=development
+    depends_on:
+      - mongo
+    volumes:
+      - .:/usr/src/app
+    command: npm start
+
+  mongo:
+    image: mongo:4.2
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
