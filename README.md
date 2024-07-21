@@ -57,10 +57,10 @@ The server should now be running on http://localhost:3000.
 ### API Endpoints
  ## Authentication
  POST /auth/register - Register a new user
- Body: { "username": "user", "password": "pass" }
+    Body: { "username": "user", "password": "pass" }
 
  POST /auth/login - Login and receive JWT token
- Body: { "username": "user", "password": "pass" }
+    Body: { "username": "user", "password": "pass" }
 
  ## Bookings
  All booking routes require authentication. Include the JWT
